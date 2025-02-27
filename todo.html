@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Toturial Todo</title>
+  </head>
+  <body>
+    <input type="text" id="inputvalue">
+    <button onclick="add()">Add</button>
+    <br>
+    <ul id="list-container">
+        <li>Hello
+            <button onclick="deleteiteam(event)">Delete</button>
+        </li>
+    </ul>
+
+    <script>
+        // selectiong ul
+        var addlist = document.getElementById("list-container")
+        var inputtext = document.getElementById("inputvalue")
+
+        function add()
+        {
+            var listitem = document.createElement("li")
+            listitem.innerHTML=inputtext.value + "<button onclick='deleteiteam(event)'> Delete </button>"
+            addlist.append(listitem)
+        }
+
+        function deleteiteam(event) {
+            event.target.parentElement.remove()
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do While loop</title>
+  </head>
+  <body>
+    <div id="result"></div>
+
+    
+<div id="resultnew"></div>
+
+    <script>
+      // Initialize a variable to store the result
+      var text = "The game has ended.";
+    
+      // A simple game loop
+      do {
+        console.log('Playing Game...');
+        var continueplaying = confirm('Continue playing?');
+      } while (continueplaying);
+    
+      // The result after the loop ends
+      console.log('The End');
+    
+      // Update the result div with the text
+      document.getElementById("result").innerHTML = text;
+    </script>
+
+
+
+<script>
+  // Initialize a counter variable to keep track of how many times the user clicks "OK"
+  var count = 0;
+
+  // A simple game loop
+  do {
+    console.log('Playing Game...');
+    var continueplaying = confirm('Continue playing?');
+
+    if (continueplaying) {
+      count++;  // Increment the counter if the user chooses to continue
+    }
+
+  } while (continueplaying);
+
+  // After the loop ends, display the result in the HTML
+  console.log('The End');
+
+  // Display the count in the result div
+  document.getElementById("resultnew").innerHTML = "You chose to continue playing " + count + " times. The game has ended.";
+</script>
+
+    
+  </body>
+</html>

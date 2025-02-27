@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Promises</title>
+  </head>
+  <body>
+    Js Promises
+
+    <ol id="result"></ol>
+
+    <script>
+      // new Promise(function(resolve, reject) {
+
+      // })
+
+      const orderCoffee = new Promise((resolve, reject) => {
+        const machinework = true;
+        setTimeout(() => {
+          if (machinework) {
+            resolve("Coffee is ready give it to the customer");
+          } else {
+            reject("Coffee is not ready");
+          }
+        }, 1500);
+      });
+      console.log("Order Ready");
+
+      orderCoffee
+        .then((message) => {
+          console.log('First Than', message);
+
+          return new Promise((resolve, reject)=>{
+            resolve("here is the bill : 20")
+          })
+        })
+        .then((billinfo)=>{
+          console.log('Bill info', billinfo);
+
+        })
+        .catch((message) => {
+          console.log(message);
+        })
+        .finally(() => {
+          console.log("Thank you for visiting ");
+        });
+
+      // // const resultEl = document.querySelector("#result");
+
+      // // setTimeout(() => {
+      // //   resultEl.innerHTML = 3;
+
+      // //   setTimeout(() => {
+      // //   resultEl.innerHTML = 2;
+
+      // //   setTimeout(() => {
+      // //   resultEl.innerHTML = 1;
+
+      // //   setTimeout(() => {
+      // //   resultEl.innerHTML =  "Happy New Year";
+
+      // // }, 1500);
+
+      // // }, 1500);
+
+      // // }, 1500);
+
+      // // }, 1500);
+
+      // resultEl.innerHTML = 3
+      // resultEl.innerHTML = 2
+      // resultEl.innerHTML = 1
+      // resultEl.innerHTML = "Happy New Year"
+    </script>
+  </body>
+</html>

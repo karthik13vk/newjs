@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="display: flex; gap: 20px;">
+    <div id="result"></div>
+    <div id="result2"></div>
+    <div id="result3"></div>
+  </div>
+    
+
+    <script>
+    let fruits = ["apple", "banana", "orange", "mango", "grapes"];
+// method 1
+    fruits.forEach(function(item){
+      document.getElementById("result").innerHTML += `<h1>${item}</h1>` + "<br>";
+    })
+// method 2
+    fruits.forEach((item) => {
+      document.getElementById("result2").innerHTML += `<h1>${item}</h1>` + "<br>";
+    });
+
+    // method 3
+    fruits.forEach( item  => {
+      document.getElementById("result3").innerHTML += `<h1>${item}</h1>` + "<br>";
+    });
+    </script>
+  </body>
+</html>

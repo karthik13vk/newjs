@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Toturial</title>
+</head>
+ <style>
+    div{
+        background-color: red;
+        width: 100px;
+        height: 100px;
+    }
+.maxwidth{
+    width: 500px;
+    margin: auto;
+}
+ </style>
+<body>
+<div id="boxchange">
+
+    
+</div>
+
+<button onclick="changecolor()">Change Color</button>
+
+   <script>
+
+    var newbox = document.getElementById('boxchange');
+
+
+    function changecolor() {
+        boxchange.style.backgroundColor = "blue"; 
+        boxchange.setAttribute('class', 'maxwidth');
+    }
+
+   </script>
+
+</body>
+
+</html>

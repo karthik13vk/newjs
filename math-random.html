@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Toturial</title>
+</head>
+
+<body>
+
+   <h1 id="firsttitle"> Guess the number</h1>
+
+   <input type="text" id="guessnumber" value=""> <br><br>
+   <button onclick="check()"> click</button><br><br> 
+   
+   <p id="result">Your are Wrong / Right</p>
+   <p id="score">Score:10</p>
+   
+   <script>
+
+    var guessvalue= document.getElementById("guessnumber")
+    var resultvalue = document.getElementById("result")
+    var score = document.getElementById("score")
+    var randomNumber = Math.floor(Math.random()*10)+1
+
+    var totalscore = 10
+
+    function check() {
+        var enternumber = guessvalue.value
+        if(randomNumber == enternumber) 
+        {
+            console.log("Right")
+            result.textContent="Right"
+        }
+        else {
+            console.log("Wrong")
+            totalscore = totalscore-1
+            score.textContent="score:"+ totalscore
+              result.textContent="Wrong"
+        }
+    }
+   </script>
+
+</body>
+
+</html>

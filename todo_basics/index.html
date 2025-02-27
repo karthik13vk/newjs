@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todo</title>
+  </head>
+  <body>
+    <h1>todo</h1>
+    <input type="text" placeholder="search" id="searchinput" /> <br /><br />
+    <input type="text" id="taskinput" />
+    <button id="addbtn">Add</button>
+
+    <div id="result"></div>
+
+    <script>
+      // // user can create task - completed
+      // // user can delete task
+      // // user can search task
+      // // user can update the completed and undo task
+
+      let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      let resultElement = document.querySelector("#result");
+
+      function renderpage(array) {
+        // //reset input value
+        resultElement.innerHTML = "";
+
+        // //append  input value
+        array.forEach((item) => {
+          let divElement = document.createElement("div");
+          divElement.innerHTML += ` <h1><input type="checkbox"  ${
+            item.iscompleted ? "checked" : ""
+          }>${item.name} -${item.iscompleted ? "Completed" : ""} </h1>
+                                <button>Delete</button>`;
+          divElement.querySelector("input").addEventListener("change", () => {
+            togglecomplete(item.id);
+          });
+          divElement.querySelector("button").addEventListener("click", () => {
+            deletebtn(item.id);
+          });
+          resultElement.appendChild(divElement);
+        });
+      }
+      renderpage(tasks);
+      document.getElementById("addbtn").addEventListener("click", function () {
+        // //get input value
+        let value = document.getElementById("taskinput").value;
+        let obj = { id: Date.now(), name: value, iscompleted: false };
+
+        // //push input value
+        tasks.push(obj);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+
+        renderpage(tasks);
+        console.log(tasks);
+      });
+
+      function deletebtn(taskId) {
+        tasks = tasks.filter((item) => item.id != taskId);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+
+        renderpage(tasks);
+        console.log(tasks);
+      }
+
+      document.getElementById("searchinput").addEventListener("keyup", () => {
+        let searchkey = document.getElementById("searchinput").value;
+        let serachtask = tasks.filter((item) => {
+          return item.name.includes(searchkey);
+        });
+
+        renderpage(serachtask);
+      });
+
+      function togglecomplete(taskId) {
+        tasks = tasks.map((item) => {
+          if (item.id == taskId) {
+            item.iscompleted = !item.iscompleted;
+            return item;
+          } else {
+            return item;
+          }
+        });
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        renderpage(tasks);
+      }
+
+      const a = "karthik";
+      function ui() {
+        console.log(a);
+      }
+      ui();
+    </script>
+  </body>
+</html>

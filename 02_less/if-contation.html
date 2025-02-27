@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if-contation</title>
+  </head>
+  <body>
+    <h1 id="result"></h1>
+
+    <script>
+      ////method First
+      // let isRaining = true
+      // if(isRaining){
+      //   document.getElementById("result").innerHTML = "It is raining"
+      // } else {
+      //   document.getElementById("result").innerHTML = "It is not raining"
+
+      // }
+
+      ////method second
+      let weatherValue = "12";
+      if (weatherValue === "raining" || weatherValue === "hot") {
+        document.getElementById("result").innerHTML = "It is raining";
+      } else if (weatherValue === "sunny") {
+        document.getElementById("result").innerHTML = "The weather is sunny";
+      } else {
+        document.getElementById("result").innerHTML = "Nothing to see here";
+      }
+    </script>
+  </body>
+</html>

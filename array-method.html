@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Array</title>
+  </head>
+  <body>
+    <script>
+      var bikecolor = ['Unicorn', "Apache", "R15", "Xtreame", "KTM"]
+      bikecolor.sort()
+      console.log(bikecolor)
+      bikecolor.reverse()
+      bikecolor.push('RX100')
+      console.log(bikecolor)
+
+
+      var bike = [
+        {
+          id: 1,
+          name: "Karthi",
+          age: 21,
+          city: "Erode",
+        },
+        {
+          id: 2,
+          name: "Allen",
+          age: 26,
+          city: "Tiruppur",
+        },
+        {
+          id: 3,
+          name: "Mani",
+          age: 31,
+          city: "Coimbatore",
+        },
+      ];
+      //// method 1
+      bike.forEach(function (person) {
+        console.log(person.age);
+      });
+
+      //// method 2
+      for (var i = 0; i < bike.length; i++) {
+        console.log(bike[i].age);
+      }
+      //// method 3
+      var ages = bike.map(function (person) {
+        return person.age;
+      });
+
+      // Find the object with id === 3
+      var personWithId3 = bike.find(function (person) {
+        return person.id === 3;
+      });
+
+      if (personWithId3) {
+        console.log("Age of person with id 3:", personWithId3.age);
+      } else {
+        console.log("Person with id 3 not found.");
+      }
+
+      bike
+
+
+      console.log(bike[1].name);
+
+     //// filter
+      const result = bike.filter(b => b.id === 3);
+console.log(result[0].name);
+    </script>
+  </body>
+</html>

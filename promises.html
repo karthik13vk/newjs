@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Popup</title>
+  </head>
+  <style></style>
+  <body>
+    <div class="overlay"></div>
+
+    <script>
+      const data = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          const ans = "karthi";
+          if (ans) {
+            resolve(ans);
+          } else {
+            reject("No Date Present");
+          }
+        }, 2000);
+      });
+      function getUserDetails(inputname) {
+        const userDetails = new Promise((resolve, reject) => {
+          setTimeout(() => {
+            let userDetails = [{ name: "karthi", age: 20, city: "Erode" }];
+            const user = userDetails.find(user=>user.name === inputname)
+            if (userDetails) {
+              resolve(userDetails);
+            } else {
+              reject("Error Occured");
+            }
+          }, 1000);
+        });
+
+        return  userDetails;
+      }
+
+      data
+        .then((name) => {
+          getUserDetails(name).then((userDetail)=>{
+            console.log(userDetail)
+          })
+          // let userDetails = [{ name: "karthi", age: 20, city: "Erode" }];
+          // console.log(userDetails.find((user) => user.name === name).age);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+        .finally(() => {
+          console.log('Test');
+        });
+    </script>
+  </body>
+</html>

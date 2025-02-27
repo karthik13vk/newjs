@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Js</title>
+</head>
+<body>
+    <button onclick="change()"> change</button>
+  <p id="paragraph1">paragraph1</p>
+  <p>paragraph3</p>
+  <p>paragraph3</p>
+
+  <script>
+    document.getElementById("paragraph1").innerHTML;
+    console.log(document.getElementById("paragraph1").innerHTML);
+
+    let change = () => {
+      document.getElementById("paragraph1").innerHTML = "paragraph1 changed";
+    };
+
+    // function change(){
+    //     document.getElementById("paragraph1").innerHTML = "hello world";
+    // }
+  </script>
+</body>
+</html>

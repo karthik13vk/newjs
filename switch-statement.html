@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>switch statement</title>
+  </head>
+  <body>
+    
+ <h2>switch statement</h2>
+ <canvas id="myCanvas" width="400" height="200" style="border:1px solid #000;"></canvas>
+<script>
+  const canvas = document.getElementById('myCanvas');
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'blue';
+  ctx.fillRect(50, 50, 100, 50); // Draws a blue rectangle
+</script>
+
+ <div id="result"></div>
+<script>
+  // Initialize a counter variable to keep track of how many times the user clicks "OK"
+var workingday =  7;
+
+if (workingday==1){
+  console.log("Day 1 is the Monday ")
+} else if (workingday==2){
+  console.log("Day 2 is the Tuesday ");
+}  else if (workingday==3){
+  console.log("Day 3 is the Wednesday ");
+} else if (workingday==4){
+  console.log("Day 4 is the Thuesday ");
+} else if (workingday==5){
+  console.log("Day 5 is the Friday ");
+} else if (workingday==6){
+  console.log("Day 6  is the Saturday ");
+} else if (workingday== 7){
+  console.log("Day 7 is the Sunday  ");
+}
+
+
+var workingday = 3;  // Example: change this value to test different days
+
+switch (workingday) {
+  case 1: 
+    console.log("Day 1 is the Monday");
+    document.getElementById('result').innerHTML = "Day 1 is the Monday";
+    break;
+  case 2: 
+    console.log("Day 2 is the Tuesday");
+    document.getElementById('result').innerHTML = "Day 2 is the Tuesday";
+    break;
+  case 3: 
+    console.log("Day 3 is the Wednesday");
+    document.getElementById('result').innerHTML = "Day 3 is the Wednesday";
+    break;
+  case 4: 
+    console.log("Day 4 is the Thursday");
+    document.getElementById('result').innerHTML = "Day 4 is the Thursday";
+    break;
+  case 5: 
+    console.log("Day 5 is the Friday");
+    document.getElementById('result').innerHTML = "Day 5 is the Friday";
+    break;
+  case 6: 
+    console.log("Day 6 is the Saturday");
+    document.getElementById('result').innerHTML = "Day 6 is the Saturday";
+    break;
+  case 7: 
+    console.log("Day 7 is the Sunday");
+    document.getElementById('result').innerHTML = "Day 7 is the Sunday";
+    break;
+  default:
+    console.log("Invalid day");
+    document.getElementById('result').innerHTML = "Invalid day";
+    break;
+}
+
+ </script>
+
+    
+  </body>
+</html>

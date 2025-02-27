@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Toturial</title>
+</head>
+ 
+<body>
+    <h1 >Name : <span id="result"></span></h1>
+ 
+    <button onclick="add(event)">Arul</button> 
+    <button onclick="add(event)">Sanjai</button> 
+    <button onclick="add(event)">Suresh</button>  
+
+  
+    <!-- <div id="showresult"></div> -->
+   <script>
+    var clickname = document.getElementById("result");
+
+    function add(event) {
+        clickname.textContent=event.target.textContent
+    }
+   </script>
+
+</body>
+
+</html>

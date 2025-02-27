@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="search" />
+    <div id="result"></div>
+
+    <script>
+      let fruits = ["apple", "banana", "orange", "mango", "grapes"];
+      // method 1
+      //  let filterfruits = fruits.filter((item)=>{
+      //     return item.includes("r")
+      //   })
+
+      //   filterfruits.forEach(item =>{
+      //     document.getElementById('result').innerHTML +=  `<h1>${item}</h1>` + "<br>"
+      //   })
+
+      document.getElementById('search').addEventListener("keyup", ()=> {
+
+        document.getElementById("result").innerHTML = ''
+
+        let searchkey = document.getElementById('search').value
+
+        let filterfruits = fruits.filter(item => {
+          return item.includes(searchkey)
+        })
+          filterfruits.forEach(item => {
+            document.getElementById("result").innerHTML +=
+              `<h1>${item}</h1>` + "<br>"
+          })
+       
+      })
+    </script>
+  </body>
+</html>

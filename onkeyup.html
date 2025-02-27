@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Toturial</title>
+</head>
+ 
+<body>
+    <input type="text" id="typevalue" onkeyup="showvalue()"> <br><br>
+    <button onclick="showvalue()" id="submitbtn">Result</button>  <br><br>
+
+  
+    <p id="showresult"></p>
+   <script>
+    var newtypevalue = document.getElementById("typevalue");
+
+    var newshowresult = document.getElementById("showresult");
+
+    function showvalue() {
+    //   var typevalue1 = Number(newtypevalue.value);
+      showresult.textContent=newtypevalue.value
+
+    }
+   </script>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Toturial Todo</title>
+  </head>
+  <body>
+    <input type="text" id="inputname" />
+    <input type="text" id="inputage" />
+    <input type="text" id="inputcourse" />
+    <input type="email" id="inputemail" />
+    <button onclick="add()">Add</button>
+    <br />
+
+    <table id="list-container" border="1" style="margin-top: 10px; width: 100%">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>course</th>
+          <th>email</th>
+          <th>action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      // selectiong ul
+      var addlist = document.querySelector("#list-container tbody");
+      var textname = document.getElementById("inputname");
+      var textage = document.getElementById("inputage");
+      var textcourse = document.getElementById("inputcourse");
+      var textemail = document.getElementById("inputemail");
+
+      function add() {
+        var listitem = document.createElement("tr");
+        listitem.innerHTML = `
+        <td>${textname.value}</td>
+        <td>${textage.value}</td>
+        <td>${textcourse.value}</td>
+        <td>${textemail.value}</td>
+        <td><button onclick="deleteItem(event)">Delete</button></td> `;
+        addlist.append(listitem);
+
+        // Clear the input fields
+        textname.value = "";
+        textage.value = "";
+        textcourse.value = "";
+        textemail.value = "";
+      }
+
+      function deleteiteam(event) {
+        event.target.parentElement.remove();
+      }
+    </script>
+  </body>
+</html>

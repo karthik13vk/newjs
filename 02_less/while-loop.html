@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+<input type="number" id="number"> <button id="starbtn">Submit</button>
+    <div id="result"></div>
+
+    <script>
+     document.getElementById("starbtn").addEventListener("click", function () {
+      document.getElementById("result").innerHTML = ''
+      let totalround = parseInt(document.getElementById("number").value)
+      let currentlap = 1
+
+      while (currentlap <= totalround) {
+        document.getElementById("result").innerHTML += `<h1>Lap ${currentlap} is completed</h1>`;
+        currentlap++;
+
+      }
+      console.log("you have completed all laps");
+     });
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Toturial</title>
+</head>
+
+<body>
+
+
+<input type="text" id="value1" value=""> <br><br>
+<input type="text" id="value2" value=""> <br><br>
+<button onclick="titalnnew()"> click</button><br><br>
+<p > Resule : <span id="result"></span> </p>
+
+
+<script>
+var newvalue1 = document.getElementById("value1")
+var newvalue2 = document.getElementById("value2")
+var  newresult = document.getElementById("result")
+
+function titalnnew() {
+    var addvalue1 = Number(newvalue1.value)
+    var addvalue2 = Number(newvalue2.value)
+    var addnewresult = addvalue1+addvalue2
+    result.textContent = addnewresult 
+
+}
+
+
+</script>
+
+// let num1 = 10, num2 = 20;
+// [num1, num2] = [num2, num1];
+// console.log(num1 );
+// console.log(num2 );
+
+</body>
+
+</html>

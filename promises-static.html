@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Promises</title>
+  </head>
+  <body>
+    Js Promises
+
+    <ol id="result"></ol>
+
+    <script>
+      // // Promise.All
+      const p1 = new Promise((resolve, reject) => {
+        setTimeout(
+          resolve("ok i got the value"),
+
+          1000
+        );
+      });
+
+      const p2 = Promise.resolve("Promise");
+      const p3 = 1234;
+      Promise.all([p1, p2, p3]).then((responses)=>{
+        console.log("responses :", responses)
+      }).catch((error)=>{
+        console.error('Error', error)
+      })
+     
+    </script>
+  </body>
+</html>

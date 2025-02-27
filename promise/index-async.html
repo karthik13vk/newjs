@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises</title>
+  </head>
+  <body>
+    <input type="text" id="order-id" />
+    <button id="checkbtn">Check Order</button>
+
+    <h1 id="result"></h1>
+    <script>
+    //   function checkorder() {
+    //     return new Promise((resolve, reject) => {
+    //       let orderid = document.querySelector("#order-id").value;
+
+    //       if (orderid == "order123") {
+    //         resolve("Your Order is delivered");
+    //       } else {
+    //         reject("Your Order is not delivered");
+    //       }
+    //     });
+    //   }
+
+      async function checkorder()  {
+        let orderid = document.querySelector("#order-id").value;
+        if (orderid == "order123") {
+            return("Your Order is delivered");
+          } else {
+            throw("Your Order is not delivered");
+          }
+      }
+
+      // // Async  method
+      //   document.querySelector("#checkbtn").addEventListener("click", () => {
+      //
+      //     checkorder().then((success)=> {
+      //        document.querySelector("#result").innerHTML = success;
+      //     }).catch((failer)=>{
+      //          document.querySelector("#result").innerHTML = failer;
+      //     })
+      //   });
+
+      // Await  method
+      document.querySelector("#checkbtn").addEventListener("click", async () => {
+        let orderid = document.querySelector("#order-id").value = '';
+          try {
+            let success = await checkorder();
+
+            document.querySelector("#result").innerHTML = success;
+          } catch (error) {
+            document.querySelector("#result").innerHTML = error;
+          }
+          
+        });
+    </script>
+  </body>
+</html>

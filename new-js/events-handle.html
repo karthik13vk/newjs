@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Js</title>
+  </head>
+  <body>
+    <button id="changebtn">change</button>
+    <button id="changeEvent">change Event Listner</button>
+    <p id="paragraph1">paragraph1</p>
+    <p id="paragraph2">paragraph3</p>
+    <p>paragraph3</p>
+
+    <script>
+      function change() {
+        document.getElementById("paragraph1").innerHTML = "paragraph1 changed";
+      }
+      document.getElementById("changebtn").onclick = function () {
+        change();
+      };
+
+      function changeevent() {
+        document.getElementById("paragraph2").innerHTML = "paragraph2 Will be change";
+      }
+        document.getElementById("changeEvent").onclick = function() {
+          changeevent();
+        };
+  
+    </script>
+  </body>
+</html>

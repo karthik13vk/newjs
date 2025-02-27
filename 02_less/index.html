@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="value1" id="value1" />
+    <input type="text" name="value2" id="value2" />
+    <button id="jointbtn">Joint</button>
+
+    <div id="result"></div>
+
+    <script>
+      document
+        .getElementById("jointbtn")
+        .addEventListener("click", function () {
+          document.getElementById("result").innerHTML =
+            document.getElementById("value1").value +
+            " " +
+            document.getElementById("value2").value;
+        });
+
+      // var inputvalue1 = document.getElementById("value1").value;
+      // var inputvalue2 = document.getElementById("value2").value;
+      // var jointvalue = inputvalue1 + inputvalue2;
+
+      // document.getElementById("result").innerHTML = jointvalue;
+    </script>
+  </body>
+</html>

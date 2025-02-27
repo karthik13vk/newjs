@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "Nunito", sans-serif;
+    line-height: 1.5;
+}
+.navbar{
+    background-color: #fd6569;
+    color: #fff;
+    padding: 10px;
+}
+.container{
+padding: 10px;
+
+}
+.bookcontainer{
+padding: 15px;
+text-align: left;
+width: 25%;
+background-color: black;
+color: #fff;
+border-radius: 10px;
+margin: 30px;
+display: inline-block;
+vertical-align: top;
+}
+.bookcontainer h2{
+    color: #fd6569;
+}
+.bookcontainer button{
+    background-color: #fd6569;
+    color: #000;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 15px;
+    border: none;
+}
+.add-button {
+    background-color: #fd6569;
+    color: #000;
+    border-radius: 50%;
+    /* padding: 20px; */
+    font-size: 24px;
+    border: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+}
+.popupoverlay{
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    z-index: 1  ;
+    display: none;
+}
+.popupbox{
+    background-color: #fd6569;
+    width: 40%;
+    padding: 40px;
+    border-radius: 10px;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    z-index: 2;
+    display: none;
+}
+.popupbox input, 
+.popupbox textarea
+{
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+    border-bottom: 1px solid #333;
+}
+.popupbox input::placeholder,
+.popupbox textarea::placeholder
+{
+    color: #000 ;
+}
+.popupbox button{
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px ;
+    border: none;
+    margin: 10px;
+}
+.popupbox input:focus,
+.popupbox textarea:focus
+{
+outline: none;
+}

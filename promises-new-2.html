@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Promises</title>
+  </head>
+  <body>
+    Js Promises
+
+    <ol id="result"></ol>
+
+    <script>
+      const heading = document.querySelector('#result')
+      function wait(duration){
+        return new Promise((resolve, reject)=>{
+          setTimeout(()=>{
+            resolve()
+          }, duration)
+        })
+      }
+      wait(1000).then(()=>{
+        heading.innerHTML = 3
+        console.log(3);
+        return wait(1000)
+      }).then(()=>{
+        heading.innerHTML = 2
+        console.log(2);
+        return wait(1000)
+      }).then(()=>{
+        heading.innerHTML = 1
+        console.log(1);
+        return wait(1000)
+      })
+      .then(()=>{
+        heading.innerHTML = "Happy New Year"
+        console.log("Happy New Year");
+        return wait(1000)
+      })
+      // new Promise(function(resolve, reject) {
+
+    
+
+      // // const resultEl = document.querySelector("#result");
+
+      // // setTimeout(() => {
+      // //   resultEl.innerHTML = 3;
+
+      // //   setTimeout(() => {
+      // //   resultEl.innerHTML = 2;
+
+      // //   setTimeout(() => {
+      // //   resultEl.innerHTML = 1;
+
+      // //   setTimeout(() => {
+      // //   resultEl.innerHTML =  "Happy New Year";
+
+      // // }, 1500);
+
+      // // }, 1500);
+
+      // // }, 1500);
+
+      // // }, 1500);
+
+      // resultEl.innerHTML = 3
+      // resultEl.innerHTML = 2
+      // resultEl.innerHTML = 1
+      // resultEl.innerHTML = "Happy New Year"
+    </script>
+  </body>
+</html>
